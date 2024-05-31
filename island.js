@@ -84,24 +84,24 @@ function islandSize(row, col, graph) {
 
 module.exports = [getNeighbors, islandSize];
 
+// code check
+// matrix = [
+//   [1,1,1,0,0],
+//   [0,1,1,0,1],
+//   [0,1,1,0,1],
+// ]
 
-matrix = [
-  [1,1,1,0,0],
-  [0,1,1,0,1],
-  [0,1,1,0,1],
-]
+// matrix2 = [
+//   [0, 0, 0],
+//   [0, 1, 0],
+//   [0, 0, 0],
+// ]
 
-matrix2 = [
-  [0, 0, 0],
-  [0, 1, 0],
-  [0, 0, 0],
-]
+// console.log(getNeighbors(1, 1, matrix2))//.to.have.length(0);
+// console.log(getNeighbors(1, 1, matrix))//.to.have.deep.members([[0, 1], [1, 2], [2, 1]]);
+// console.log(getNeighbors(0, 0, matrix))//.to.have.deep.members([[0, 1]]);
+// console.log(getNeighbors(2, 4, matrix))//.to.have.deep.members([[1, 4]]);
+// console.log(getNeighbors(1, 0, matrix))//.to.have.deep.members([[0, 0], [1, 1]]);
 
-console.log(getNeighbors(1, 1, matrix2))//.to.have.length(0);
-console.log(getNeighbors(1, 1, matrix))//.to.have.deep.members([[0, 1], [1, 2], [2, 1]]);
-console.log(getNeighbors(0, 0, matrix))//.to.have.deep.members([[0, 1]]);
-console.log(getNeighbors(2, 4, matrix))//.to.have.deep.members([[1, 4]]);
-console.log(getNeighbors(1, 0, matrix))//.to.have.deep.members([[0, 0], [1, 1]]);
-
-console.log(islandSize(1, 1, matrix))//.to.equal(7);
-console.log(islandSize(2, 4, matrix))//.to.equal(2);
+// console.log(islandSize(1, 1, matrix))//.to.equal(7);
+// console.log(islandSize(2, 4, matrix))//.to.equal(2);
