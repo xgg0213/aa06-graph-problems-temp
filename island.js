@@ -56,7 +56,29 @@ function islandSize(row, col, graph) {
   // return size
 
   // Your code here 
-  
+  // use breath-first traversal, ensuring all connected nodes are visited
+  let queue = [[row, col]];
+  let visited = new Set();
+  let size = 0
+
+  while (queue.length) {
+    let currentNode = queue.shift();
+    let neighbors = getNeighbors(currentNode[0],currentNode[1], graph);
+    size += graph[currentNode[0]][currentNode[1]];
+
+    if (!visited.has(currentNode.toString())) {
+      visited.add(currentNode.toString());
+    }
+
+    for (let neighbor of neighbors) {
+      if (!visited.has(neighbor.toString())) {
+        visited.add(neighbor.toString());
+        queue.push(neighbor);
+      }
+    }
+  }
+
+  return size;
 
 }
 
@@ -80,3 +102,6 @@ console.log(getNeighbors(1, 1, matrix))//.to.have.deep.members([[0, 1], [1, 2], 
 console.log(getNeighbors(0, 0, matrix))//.to.have.deep.members([[0, 1]]);
 console.log(getNeighbors(2, 4, matrix))//.to.have.deep.members([[1, 4]]);
 console.log(getNeighbors(1, 0, matrix))//.to.have.deep.members([[0, 0], [1, 1]]);
+
+console.log(islandSize(1, 1, matrix))//.to.equal(7);
+console.log(islandSize(2, 4, matrix))//.to.equal(2);
